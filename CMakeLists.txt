@@ -25,6 +25,10 @@ project(freertosproject C CXX ASM)
 
 pico_sdk_init()
 
+
+add_subdirectory(lib/ssd1306)
+add_subdirectory(lib/lcd1602)
+#add_subdirectory(lib/led)
 # === FreeRTOS library ===
 
 add_library(freertos_kernel
@@ -64,7 +68,13 @@ target_link_libraries(freertosproject
     hardware_i2c
     hardware_timer
     hardware_uart
+
+    ssd1306_i2c_lib
+    lcd_1602_i2c_lib
+    
+
     freertos_kernel
+    
 )
 
 target_include_directories(freertosproject PRIVATE
