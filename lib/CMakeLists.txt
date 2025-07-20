@@ -28,6 +28,8 @@ add_subdirectory(led)
 
 add_subdirectory(divcheck)
 
+add_subdirectory(webserver)
+
 # --- NEU: Binde die TinyUSB-Bibliothek ein ---
 # Da tinyusb direkt in 'libraries/tinyusb' liegt, verweisen wir darauf.
 # Der zweite Parameter 'tinyusb_library' ist der Name, der diesem Unterverzeichnis

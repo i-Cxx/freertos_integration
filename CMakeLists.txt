@@ -26,6 +26,11 @@ project(freertosproject C CXX ASM)
 pico_sdk_init()
 
 
+# add_subdirectory(external/lwip)
+# add_subdirectory(external/tinyusb)
+# add_subdirectory(external/webserver  )
+
+add_subdirectory(lib/webserver)
 add_subdirectory(lib/ssd1306)
 add_subdirectory(lib/lcd1602)
 #add_subdirectory(lib/led)
@@ -69,9 +74,27 @@ target_link_libraries(freertosproject
     hardware_timer
     hardware_uart
 
+    pico_stdlib
+    pico_cyw43_arch_lwip_threadsafe_background
+    pico_lwip
+    pico_lwip_http
+    pico_lwip_udp
+    pico_lwip_dhcpd
+    pico_lwip_netif
+    pico_lwip_rndis
+
+    webserver
+    webserver_lib
     ssd1306_i2c_lib
     lcd_1602_i2c_lib
     
+    
+
+    
+
+    lwipcore
+    lwipallapps
+    tinyusb_device
 
     freertos_kernel
     
